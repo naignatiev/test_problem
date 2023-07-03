@@ -3,8 +3,9 @@
 ## Install Linux
 ```shell
 git clone https://github.com/naignatiev/test_problem.git
+cd test_problem
 python -m venv venv
-pip install -r requirements.text
+pip install -r requirements.txt
 flask run
 ```
 
@@ -56,6 +57,6 @@ requests.get('localhost:5000/content?sort=A,B&order=asc,desc')
 ## Комментарии
 * Много чего не сделал из того что хотел, не рассчитал время, которое отвёл себе для решения тестового
 * Тестами не успел покрыть, оставил только те которые я писал чтобы что-то затестить в процессе
-* Хотел сделать UI, но успел только страничку со списком /datasets 
+* Хотел сделать UI, но успел только страничку со списком localhost:5000/datasets 
 * Пожалуйста, если тестовое реджект, напишите мне на почту комментарии по заданию: naignatiev@yandex.ru
-* Я сделал offset, так что без него API возвращает по 100 записей на api/dataset и по 200 на api/content
+* Я сделал offset, так что API возвращает по 100 записей на api/dataset и по 200 на api/content
