@@ -40,13 +40,13 @@ requests.get('http://localhost:5000/api/dataset')
 ```python
 requests.get('http://localhost:5000/api/content?dataset_id=1')
 ```
-Фильтр можно указать любой в формате pandas
+Фильтр можно указать любой в формате pandas экранируя специальные символы url (requests это делает сам)
 ```python
-requests.get('http://localhost:5000/api/content?dataset_id=1&filter=A=="text"&B>0')
+requests.get('http://localhost:5000/api/content', params={'dataset_id': 1, 'filter': 'A=="text"&B>0'})
 ```
 Для сортировки нужно передать sort и order. В sort через запятую перечисление названий колонок, в order 'asc' или 'desc'
 ```python
-requests.get('http://localhost:5000/api/content?sort=A,B&order=asc,desc')
+requests.get(r'http://localhost:5000/api/content?dataset_id=1&sort=A,B&order=asc,desc')
 ```
 
 ## Комментарии
