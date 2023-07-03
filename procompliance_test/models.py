@@ -73,6 +73,7 @@ def get_dataset_info_dict(dataset: DatasetInfo) -> DatasetJSONType:
 
 def delete_dataset_by_id(dataset_id: int) -> None:
     DatasetInfo.query.filter(DatasetInfo.id == dataset_id).delete()
+
     db.session.commit()
 
 
@@ -97,11 +98,10 @@ def get_df_content(
         count: int = Config.DATASET_PAGES_PER_REQUEST
         ):
     dataset_path = get_dataset_path_by_id(dataset_id)
-    print('DATASET_PATH: ', dataset_path)
     if filter_query or order and sort:
-        dataset_df = pd.read_csv(dataset_path)
+        dataset_df = pd.read_csv(dataset_path, index_col=0)
     else:
-        dataset_df = pd.read_csv(dataset_path, skiprows=lambda x: x not in range(offset, offset + count))
+        dataset_df = pd.read_csv(dataset_path, index_col=0, skiprows=lambda x: x not in range(offset, offset + count))
     if filter_query:
         try:
             dataset_df = dataset_df.query(filter_query)
