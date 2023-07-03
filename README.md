@@ -27,31 +27,31 @@ python cli_utils.py fill-database
 ```python
 with open('data.csv', 'rb') as f:
     data = f.read()
-requests.post('localhost:5000/api/dataset', data=data,
+requests.post('http://localhost:5000/api/dataset', data=data,
               headers={'File-Name': 'data.csv', 'Content-Type': 'text/csv'})
 ```
 
 ### Получение данных о табличках
 ```python
-requests.get('localhost:5000/api/dataset')
+requests.get(''http://localhost:5000/api/dataset')
 ```
 
 ### Удаление
 ```python
-requests.delete('localhost:5000/api/dataset?dataset_id=1')
+requests.delete(''http://localhost:5000/api/dataset?dataset_id=1')
 ```
 
 ### Получение данных таблицы
 ```python
-requests.get('localhost:5000/content?dataset_id=1')
+requests.get(''http://localhost:5000/content?dataset_id=1')
 ```
 Фильтр можно указать любой в формате pandas
 ```python
-requests.get('localhost:5000/content?dataset_id=1&filter=A=="text"&B>0')
+requests.get(''http://localhost:5000/content?dataset_id=1&filter=A=="text"&B>0')
 ```
 Для сортировки нужно передать sort и order. В sort через запятую перечисление названий колонок, в order 'asc' или 'desc'
 ```python
-requests.get('localhost:5000/content?sort=A,B&order=asc,desc')
+requests.get(''http://localhost:5000/content?sort=A,B&order=asc,desc')
 ```
 
 ## Комментарии
