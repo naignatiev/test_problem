@@ -25,7 +25,7 @@ python cli_utils.py fill-database
 
 ### Добавление таблицы
 ```python
-with open('data.csv', 'rb') as f:
+with open('data/testresources/data.csv', 'rb') as f:
     data = f.read()
 requests.post('http://localhost:5000/api/dataset', data=data,
               headers={'File-Name': 'data.csv', 'Content-Type': 'text/csv'})
