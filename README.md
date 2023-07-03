@@ -36,11 +36,6 @@ requests.post('http://localhost:5000/api/dataset', data=data,
 requests.get('http://localhost:5000/api/dataset')
 ```
 
-### Удаление
-```python
-requests.delete('http://localhost:5000/api/dataset?dataset_id=1')
-```
-
 ### Получение данных таблицы
 ```python
 requests.get('http://localhost:5000/api/content?dataset_id=1')
