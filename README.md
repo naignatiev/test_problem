@@ -48,10 +48,3 @@ requests.get('http://localhost:5000/api/content', params={'dataset_id': 1, 'filt
 ```python
 requests.get(r'http://localhost:5000/api/content?dataset_id=1&sort=A,B&order=asc,desc')
 ```
-
-## Комментарии
-* Много чего не сделал из того что хотел, не рассчитал время, которое отвёл себе для решения тестового
-* Тестами не успел покрыть, оставил только те которые я писал чтобы что-то затестить в процессе
-* Хотел сделать UI, но успел только страничку со списком http://localhost:5000/datasets 
-* Пожалуйста, если тестовое реджект, напишите мне на почту комментарии по заданию: naignatiev@yandex.ru
-* Я сделал offset, так что API возвращает по 100 записей на api/dataset и по 200 на api/content
